@@ -1,0 +1,39 @@
+Javascrpit is a scripting language which is used to develop dynamic web pages.
+
+Initially, Javascrpit was developed only to support clinet side (fornt end) application but later they supported for sever side (backend) application also.
+
+
+Areas where JS can be used:
+
+1. clinetSide Apps
+2. sever side Apps
+3. Blockchain
+4. IOT - Internet of Things
+
+First JS Example:
+
+<html>
+    <head>
+        <title>Javascript Demo</title>
+    </head>
+
+     <body>
+
+        <h1>Hello</h1>
+
+        <script>
+
+            alert("hello");
+        </script>
+
+     </body>
+</html>
+
+
+<!--
+
+    Renders UI
+
+    Applications ->  A set of code that takes an input, process it and provides some result.
+    
+-->
