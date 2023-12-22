@@ -1,0 +1,36 @@
+Problem Statement:
+Implement a simple login system using javascript.
+
+<html>
+  <head>
+  </head>
+  <body>
+           <input type="text" id="username" placeholder="enter username">
+           <input type="password" id="password" placeholder="enter password">
+           <button onclick="login()">Login</button>
+         <script>
+                      function login(){
+                         var username = document.getElementById("username").value;
+                         var password = document.getElementById("password").value;
+                         if(username.includes(" ")){
+                            alert("Username is invalid");
+                            return;
+                          }
+                          if(username.length == 0){
+                            alert("Username required");
+                            return;
+                          }
+                          if(password.length == 0){
+                            alert("Password required");
+                            return;
+                          }
+                           if(username == "kiran" && password == "kumar"){
+                              alert("login success");
+                           }
+                           else{
+                            alert("login failure");
+                           }
+                      }
+          </script>
+  </body>
+</html>
