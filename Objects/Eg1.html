@@ -1,0 +1,44 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+
+         <script>
+
+                 var employee = {
+                       name: "Kiran", 
+                       address: {
+                           hno: "2894/134", 
+                           street: "maruthi nagar", 
+                           city: "Hyderabad",
+                           state: "Telangana"
+                       }, 
+                       projects: [
+                        {
+                            name: "CRM", 
+                            client: "CYZ"
+                        },
+                        {
+                            name: "E-Learning", 
+                            client: "KSDC"
+                        }
+                       ], 
+                       languages: ["hindi","tamil", "english"], 
+                       eid: 198, 
+                       isMarried: true
+                 }
+                 employee.previousCompany = "TCS";
+                 employee.isMarried = false;
+                 console.log(employee);
+                 delete employee.eid;
+
+                 console.log(employee.projects[1].client);
+                 console.log(employee.languages);
+                 console.log(employee.isMarried);
+                 console.log(employee.previousCompany);
+                 console.log(employee);
+         </script>
+
+    </body>
+</html

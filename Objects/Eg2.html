@@ -1,0 +1,44 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+
+          <input type="text" id="name" placeholder="enter name"> <br><br><br>
+          <input type="number" id="price" placeholder="enter price"><br><br><br>
+          <input type="text" id="brand" placeholder="enter brand"> <br><br><br>
+          <input type="text" id="imageURL" placeholder="enter image URL"><br><br><br>
+          <button onclick="addProduct()">Add Product</button>
+
+           <div>
+             
+             <img id="image">
+              <h3 id="nameofproduct"></h3>
+           </div>
+
+         <script>
+
+                   function addProduct(){
+                      var name = document.getElementById("name").value;
+                      var price = document.getElementById("price").value;
+                      var brand = document.getElementById("brand").value;
+                      var imageURL = document.getElementById("imageURL").value;
+
+                      var product = {
+                              name: name, 
+                              price: price,
+                              brand:brand, 
+                              imageURL:imageURL
+                      }
+                      // Send it to the database
+
+                       document.getElementById("image").src= product.imageURL;
+                        document.getElementById("nameofproduct").innerText =product.name;
+
+
+                   }
+                 
+         </script>
+
+    </body>
+</html>
