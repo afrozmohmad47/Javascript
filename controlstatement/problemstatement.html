@@ -1,0 +1,56 @@
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+        <ul id="productsList">
+
+        </ul>
+
+          <script>
+
+                
+                     var products = [
+                        {
+                            "name": "Puma Faster Sneakers For Men  (Black)", 
+                             "image": "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/n/9/l/-original-imagg6duchmb5vkh.jpeg?q=70"
+                        },
+                        {
+                            "name": "Revolution 5 Sneakers For Men  (Black)", 
+                             "image": "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/e/q/3/9-bq3204-014-9-nike-black-dk-smoke-grey-total-orange-gym-red-original-imagsfaynqwvgyw8.jpeg?q=70"
+                        },
+                        {
+                            "name": "Harquin M Running Shoes For Men  (Blue)#JustHere", 
+                             "image": "https://rukminim2.flixcart.com/image/832/832/l3bx5e80/shoe/f/c/j/9-ga1117-9-adidas-shanav-ftwwht-aciyel-cblack-original-imageh7mfehhudqj.jpeg?q=70"
+                        },
+                        {
+                            "name": "Flomo Sports Shoes | Breathable | Lightweight | Enhanced Cushioning | Firm Grip Running Shoes For Men  (Blue)", 
+                             "image": "https://rukminim2.flixcart.com/image/832/832/kyt0ya80/shoe/t/8/h/11-601075-11-cultsport-navy-original-imagaytdmfej783s.jpeg?q=70"
+                        }
+                     ];
+
+                      var index = 0; 
+
+                      var listItems = "";
+
+                      while(index < products.length){
+
+                        var product = products[index];
+
+                         listItems = listItems + "<li>" + product.name + "<img height='60px' width='100px' src="+product.image+"></li>"
+
+                          index++;
+                      }
+
+                      console.log(listItems);
+
+                      document.getElementById("productsList").innerHTML = listItems;
+
+
+    
+          </script>
+
+     </body>
+</html>

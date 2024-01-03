@@ -1,0 +1,213 @@
+control statements: 
+
+There are 3 types of control statements.
+
+1. Sequential Statements : 
+
+if, if-else and switch
+
+if:  if we have only one condition to be checked, then use if statement.
+
+syntax: 
+
+  if(test-condition){
+    // code
+  }
+
+  if-else: 
+
+  if we have two conditions to check, then use if-else statement. 
+
+  syntax: 
+
+   if(test-condition){
+    // code
+   }
+   else{
+    // code
+   }
+
+     var username = "kiran456"; 
+                     if(username.length >=8){
+                        console.log("username accepted");
+                     }
+                     else{
+                        console.log("username should be atleast 8 chars");
+                     }
+
+
+  switch:  if we have more than 2 conditions, then we can use switch case.
+
+  syntax: 
+
+   switch(choice){
+    case case_value1:  // code  break;
+     case case_value2:  // code break;
+      case case_value3:  // code  break;
+       case case_value4:  // code  break;
+     .
+     .
+     .
+     case case_valuen: // code break;
+     default: // code
+    
+   }
+
+
+   <html>
+    <head>
+
+    </head>
+
+     <body>
+
+          <script>
+
+               var course = "java"; 
+
+                switch(course){
+                    case "java": console.log("60 hours"); break;
+                    case "react": console.log("30 hours");  break;
+                    case "angular": console.log("30 hours");  break;
+                    case "dotnet": console.log("50 hours"); break;
+                    default: console.log("this course is not available");
+                }
+                      
+            </script>
+
+     </body>
+</html>
+
+Realtime example:
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+       <label>District:</label>  <select onchange="districtSelected()" id="district">
+              <option>Select</option>
+              <option value="hyderabad">Hyderabad</option>
+              <option value="adilabad">Adilabad</option>
+              <option value="secunderabad">Secunderabad</option>
+              <option value="karimnagar">Karimnagar</option>
+              <option value="nalgonda">Nalgonda</option>
+         </select> 
+         <br><br>
+
+         <label>Test Center</label>
+           <select id="testCenter">
+                    
+           </select>
+
+          <script>
+
+                  function districtSelected(){
+
+                    var district = document.getElementById("district").value;
+                     var testCenter = document.getElementById("testCenter");
+
+                    switch(district){
+                        case "hyderabad": 
+                          
+                         testCenter.innerHTML = "<option>select</option> <option>HYD-KOTHAGUDA</option> <option>HYD-UPPAL</option> <option>HYD-KHAIRTABAD</option>";
+                        break;
+                        case "adilabad":  testCenter.innerHTML = "<option>select</option> <option>ADL-HANUMAN NAGAR</option> <option>ADL-VIVEK NAGAR</option> <option>ADL- ABC COLONY</option>"; break;
+                        case "secunderabad":  testCenter.innerHTML = "<option>select</option> <option>SEC-STATION ROAD</option> "; break;
+                        case "karimnagar": testCenter.innerHTML = "<option>select</option> <option>KGR-BUSTOP</option> "; break;
+                        case "nalgonda": testCenter.innerHTML = "<option>select</option> <option>NLG-VASAVI NAGAR COLONY</option> "; break;
+                    }
+                  }
+                      
+          </script>
+
+     </body>
+</html>
+
+2. Iterative Statements:  If we want to execute block of code repetitively based on different conditions, 
+then we can use iterative statements.
+
+while, do-while and for loop
+
+while: 
+
+syntax: 
+  while(test-condition){
+
+    // code
+  }
+
+   var index = 1;
+                  
+                   while(index <= 10){
+                      console.log(index);
+                      index++;
+                   }
+
+Problem Statement: 
+
+Display a list of products on the UI using while loop. 
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+        <ul id="productsList">
+
+        </ul>
+
+          <script>
+
+                
+                     var products = [
+                        {
+                            "name": "Puma Faster Sneakers For Men  (Black)", 
+                             "image": "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/n/9/l/-original-imagg6duchmb5vkh.jpeg?q=70"
+                        },
+                        {
+                            "name": "Revolution 5 Sneakers For Men  (Black)", 
+                             "image": "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/e/q/3/9-bq3204-014-9-nike-black-dk-smoke-grey-total-orange-gym-red-original-imagsfaynqwvgyw8.jpeg?q=70"
+                        },
+                        {
+                            "name": "Harquin M Running Shoes For Men  (Blue)#JustHere", 
+                             "image": "https://rukminim2.flixcart.com/image/832/832/l3bx5e80/shoe/f/c/j/9-ga1117-9-adidas-shanav-ftwwht-aciyel-cblack-original-imageh7mfehhudqj.jpeg?q=70"
+                        },
+                        {
+                            "name": "Flomo Sports Shoes | Breathable | Lightweight | Enhanced Cushioning | Firm Grip Running Shoes For Men  (Blue)", 
+                             "image": "https://rukminim2.flixcart.com/image/832/832/kyt0ya80/shoe/t/8/h/11-601075-11-cultsport-navy-original-imagaytdmfej783s.jpeg?q=70"
+                        }
+                     ];
+
+                      var index = 0; 
+
+                      var listItems = "";
+
+                      while(index < products.length){
+
+                        var product = products[index];
+
+                         listItems = listItems + "<li>" + product.name + "<img height='60px' width='100px' src="+product.image+"></li>"
+
+                          index++;
+                      }
+
+                      console.log(listItems);
+
+                      document.getElementById("productsList").innerHTML = listItems;
+
+
+    
+          </script>
+
+     </body>
+</html>
+
+3. Jump Statements: 
+
+break, continue, return
+ 

@@ -1,0 +1,45 @@
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+       <label>District:</label>  <select onchange="districtSelected()" id="district">
+              <option>Select</option>
+              <option value="hyderabad">Hyderabad</option>
+              <option value="adilabad">Adilabad</option>
+              <option value="secunderabad">Secunderabad</option>
+              <option value="karimnagar">Karimnagar</option>
+              <option value="nalgonda">Nalgonda</option>
+         </select> 
+         <br><br>
+
+         <label>Test Center:</label>
+           <select id="testCenter">
+                    
+           </select>
+
+          <script>
+
+                  function districtSelected(){
+
+                    var district = document.getElementById("district").value;
+                     var testCenter = document.getElementById("testCenter");
+
+                    switch(district){
+                        case "hyderabad": 
+                          
+                         testCenter.innerHTML = "<option>select</option> <option>HYD-KOTHAGUDA</option> <option>HYD-UPPAL</option> <option>HYD-KHAIRTABAD</option>";
+                        break;
+                        case "adilabad":  testCenter.innerHTML = "<option>select</option> <option>ADL-HANUMAN NAGAR</option> <option>ADL-VIVEK NAGAR</option> <option>ADL- ABC COLONY</option>"; break;
+                        case "secunderabad":  testCenter.innerHTML = "<option>select</option> <option>SEC-STATION ROAD</option> "; break;
+                        case "karimnagar": testCenter.innerHTML = "<option>select</option> <option>KGR-BUSTOP</option> "; break;
+                        case "nalgonda": testCenter.innerHTML = "<option>select</option> <option>NLG-VASAVI NAGAR COLONY</option> "; break;
+                    }
+                  }
+                      
+          </script>
+
+     </body>
+</html>
