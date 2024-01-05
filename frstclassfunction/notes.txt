@@ -1,0 +1,274 @@
+First class functions: 
+
+If a function can be stored in a variable, can be passed as an argument and can be 
+returned from another function then it is known as first class functions. 
+
+All the functions we create in JS are first class functions. 
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+          <script>
+ 
+                    function f1(){
+                         return function(){
+                            console.log("returned function!");
+                         }
+                    }
+
+                   var x=  f1();
+
+                   x();
+          </script>
+
+     </body>
+</html>
+
+IIFE: Immediately Invoked Function Expression 
+
+If we want a function to be invoked (called) automatically then we create IIFEs.
+
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+          <script>
+ 
+                   (function(){
+                    console.log("some code");
+                   })();
+
+          </script>
+
+     </body>
+</html>
+
+
+Real time use case:  whenever we want to load the initial data in the page, then we can 
+write that logic inside the IIFE function. 
+
+We can have any number of IIFE functions. 
+
+
+Call, Apply and Bind (Self Learn): 
+
+
+call() is used to call other object's functions by substituting another object. 
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+          <script>
+ 
+                  var customer ={
+                          name: "kiran", 
+                          address: "hyderabad", 
+                          getDetails: function(){
+                               console.log(this.name + "\t"+ this.address);
+                          }
+                  }
+                  var customer2 = {
+                    name: "rajesh", 
+                    address: "banglore",
+                     
+                  }
+                 
+                   customer.getDetails.call(customer2);
+                   customer.getDetails();
+
+          </script>
+
+     </body>
+</html>
+
+
+apply: 
+
+The apply function is same as call function with a small difference. 
+
+In call function, we need to split the array of values if we need to pass then as arguments. 
+
+In apply function, splitting is automatically taken care. 
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+          <script>
+ 
+                  var customer ={
+                          name: "kiran", 
+                          address: "hyderabad", 
+                          getDetails: function(a,b,c,d){
+                               console.log(this.name + "\t"+ this.address);
+                               console.log(a + "\t"+ b+"\t"+ c+"\t"+ d+"\t");
+                          }
+                  }
+                  var customer2 = {
+                    name: "rajesh", 
+                    address: "banglore",
+                     
+                  }
+                    var arr= [10,20,30,40]
+                   customer.getDetails.call(customer2, arr[0], arr[1],arr[2],arr[3]);
+                   customer.getDetails.apply(customer2, arr);
+                  // customer.getDetails();
+
+          </script>
+
+     </body>
+</html>
+
+Closures:
+
+A closure is a nested function which is used to privatize the functions in Javascript. 
+
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+           <button onclick="user('login')">Login</button>
+           <button onclick="user('register')">Register</button>
+           <button onclick="user('forgotPassword')">Forgot password</button>
+          <script>
+ 
+                  
+                      function user(operation){
+                              function login(){
+                                  console.log("login");  
+                              }
+                              function register(){
+                                console.log("register")
+                              }
+                              function forgotPassword(){
+                                console.log("forgot password");
+                              }
+
+                               switch(operation){
+                                case "login":   login(); break;
+                                case "register": register(); break; 
+                                case  "forgotPassword": forgotPassword(); break;
+                                default : console.log("invalid operation");
+                               }
+                      }
+                     
+
+          </script>
+
+     </body>
+</html>
+
+
+
+A closure is a scope that can be used to access the outer function variables in the 
+inner function. 
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+           <button onclick="user('login')">Login</button>
+           <button onclick="user('register')">Register</button>
+           <button onclick="user('forgotPassword')">Forgot password</button>
+          <script>
+ 
+                  
+                      function user(operation){
+                                 var a= 100; 
+                                 var b=200;
+                              function login(){
+                                  console.log("login");  
+                                  console.log(a);
+                                  console.log(b);
+                              }
+                              function register(){
+                                console.log("register")
+                              }
+                              function forgotPassword(){
+                                console.log("forgot password");
+                              }
+
+                               switch(operation){
+                                case "login":   login(); break;
+                                case "register": register(); break; 
+                                case  "forgotPassword": forgotPassword(); break;
+                                default : console.log("invalid operation");
+                               }
+                      }
+                     
+
+          </script>
+
+     </body>
+</html>
+
+
+Call by Value: 
+
+
+<html>
+    <head>
+    </head>
+     <body>
+          <script>
+                      var x=100; 
+
+                      function f1(a){
+                         console.log(a);// 
+                         a=200;
+                      }
+
+                      f1(x); // f1(100) call by value - primitive types (number, boolean, string)
+                      console.log(x); // 100
+          </script>
+
+     </body>
+</html>
+
+Call by Reference: 
+
+It gets applied on non primitive types - arrays and objects
+
+While we call a function by passing a non -primitive type, we are actually passing 
+the reference (address) of the variable.
+
+<html>
+    <head>
+    </head>
+     <body>
+          <script>
+                      var x= [10,20,30]
+
+                      function f1(a){
+                            a.push(40);
+                            a.push(50);
+                      }
+
+                      f1(x); //   call by reference
+                      console.log(x.length); // ?
+          </script>
+
+     </body>
+</html>

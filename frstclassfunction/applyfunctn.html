@@ -1,0 +1,31 @@
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+          <script>
+ 
+                  var customer ={
+                          name: "kiran", 
+                          address: "hyderabad", 
+                          getDetails: function(a,b,c,d){
+                               console.log(this.name + "\t"+ this.address);
+                               console.log(a + "\t"+ b+"\t"+ c+"\t"+ d+"\t");
+                          }
+                  }
+                  var customer2 = {
+                    name: "rajesh", 
+                    address: "banglore",
+                     
+                  }
+                    var arr= [10,20,30,40]
+                   customer.getDetails.call(customer2, arr[0], arr[1],arr[2],arr[3]);
+                   customer.getDetails.apply(customer2, arr);
+                  // customer.getDetails();
+
+          </script>
+
+     </body>
+</html>

@@ -1,0 +1,157 @@
+ Functions:
+
+ A function is a block of code which takes an input (optional), process it and provides some 
+ result. 
+
+ syntax:
+
+  function function_name(parameters){
+// code
+  }
+
+   invocation:  function_name(arguments);
+
+
+ example: 
+
+    function add(a,b){
+        console.log(a+b);
+    }
+    add(20,30);
+
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+         <script>
+
+             function login(username, password){
+                    if(username == "abc" && password == "abc"){
+                        console.log("login success");
+                    }
+                    else{
+                        console.log("login failure");
+                    }
+             }
+
+              login("abc","abcc");
+
+         </script>
+
+     </body>
+</html>
+
+Anonymous functions: 
+
+If we create a function without any name then it is known as Anonymous function. 
+
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+         <script>
+              
+
+               function f1(a){
+                    a();
+               }
+
+               f1(function(){
+                   console.log("anonymous function")
+               });
+               
+
+         </script>
+
+     </body>
+</html>
+
+
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+         <script>
+              
+
+               var users= ["user 1", "user 2", "user 3", "user 4", "user 5"];
+
+                 users.forEach(function(value, index){
+                           console.log(value);
+                 });
+
+                
+                
+
+         </script>
+
+     </body>
+</html>
+
+another example:
+
+   var arr= ["kiran","rajesh","naveen","ravi", 1,2,3,4,5,6,true, false];
+                var result =  arr.filter(function(value){
+                       return  typeof value == "number";
+                  })
+                  console.log(result);
+
+Function Expressions: 
+
+If we refer an anonymous function with a variable, then it is known function 
+expression.
+
+syntax:
+
+var callbackFn = function(){ // Function Expression
+                    console.log("callback function ");
+                  }
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+         <script>
+                  function f1(a){
+                      a();
+                  }
+                  function f2(b){
+                         b();
+                  }
+                  function f3(c){
+                         c();
+                  }
+                   var callbackFn = function(){ // Function Expression
+                    console.log("callback function ");
+                  }
+
+                  f1(callbackFn);
+
+                  f2(callbackFn);
+                  
+                  f3(callbackFn);
+
+                  callbackFn = null; 
+
+                //   f3(callbackFn);
+
+         </script>
+
+     </body>
+</html>
+

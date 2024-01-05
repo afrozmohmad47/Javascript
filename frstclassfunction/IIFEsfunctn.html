@@ -1,0 +1,29 @@
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+          <script>
+ 
+                  var customer ={
+                          name: "kiran", 
+                          address: "hyderabad", 
+                          getDetails: function(){
+                               console.log(this.name + "\t"+ this.address);
+                          }
+                  }
+                  var customer2 = {
+                    name: "rajesh", 
+                    address: "banglore",
+                     
+                  }
+                 
+                   customer.getDetails.call(customer2);
+                   customer.getDetails();
+
+          </script>
+
+     </body>
+</html
